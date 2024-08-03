@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAPI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .loading {
+            display: none;
+            font-size: 1.2em;
+            color: blue;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+        }
+        #fetchButton{
+            background-color: rgb(132, 184, 167);
+            border-radius: 30%;
+            padding: 10px 40px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Star WAR API</h1>
+        <div class="options">
+            <div>
+                <label for="entity">Type:</label>
+                <select id="entity">
+                    <option value="people">People</option>
+                    <option value="planets">Planets</option>
+                    <option value="films">Films</option>
+                </select>
+            </div>
+            <div>
+                <label for="id">Choose</label>
+                <input type="number" id="id" min="1" max="10" required>
+            </div>
+            <button id="fetchButton">Click</button>
+        </div>
+        <div class="loading" id="loading">Loading...</div>
+        <div class="result" id="result"></div>
+        <div class="error" id="error"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
